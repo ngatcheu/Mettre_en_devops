@@ -1,0 +1,102 @@
+Chapitre 5: Qualification continue
+Objectif : Il présente les exigences de qualification propres à DevOps qui conduisent à l’automatisation de tests.
+L’ingénierie du test est ensuite rappelée ainsi que sa mise en œuvre particulière connue sous le nom de
+Test Driven Development, recommandée par DevOps.
+
+5.1 DEVOPS ET LES TESTS
+5.1.1 La criticité des tests pour DevOps
+DevOps vise la production de logiciels de qualité. L’intégration
+continue, le travail en pièce à pièce et les mises en production
+fréquentes de composants parfois en cours de modification
+simultanée par plusieurs équipes imposent la vérification continue
+et donc automatique de la non-régression du logiciel.le
+système automatique de test de non-régression doit être enrichi
+en continu par les tests de chaque nouvelle fonctionnalité.
+
+5.1.2 Tests et sûreté de fonctionnement
+la sûreté de fonctionnement de l’informatique ne repose pas
+uniquement sur les activités de tests fonctionnels et de tests de
+performance. La diminution de la taille des incréments logiciels,
+l’implication des équipes de développement dans le monitoring de
+leurs développements en production, ainsi que la progressivité
+des installations et de l’activation des nouvelles fonctionnalités
+contribuent à la qualité de l’informatique perçue par les
+utilisateurs.
+
+5.1.3 Les atouts de DevOps pour réussir
+les tests
+Bien que crucial pour son fonctionnement, DevOps ne
+révolutionne pas l’ingénierie du test. Il s’appuie en revanche sur
+trois leviers pour améliorer ces pratiques sensibles et éviter que
+l’activité de qualification ne soit sacrifiée au fur et à mesure du
+retard des développements et du maintien de la date d’un
+démarrage conçu.
+   -Le temps donné au test
+     Lorsque DevOps fonctionne bien, les métiers ne font plus pression
+     sur la DSI pour délivrer plus rapidement.
+     L’amélioration de la productivité laisse le temps de faire
+      l’ingénierie correctement.
+      DevOps n’a pas besoin que les informaticiens se dépêchent
+      pour délivrer rapidement. C’est le fonctionnement en pièce à pièce
+      qui fournit la vitesse, sans précipitation.
+      DevOps optimise les délais par la performance, sans transiger
+      sur la qualité des tests pour tenir un engagement de date.
+      
+    -Les tests ne peuvent plus être une variable
+     d’ajustement des plannings
+     L’approche Extreme Programming et le travail en équipe intégrée
+     ne distinguent pas les activités de développement et de test sous
+     la forme de deux phases successives.
+     Les pratiques de développement piloté par les tests (Test Driven
+     Development) préconisées par DevOps imbriquent au contraire
+     ces deux activités pour chaque « pièce » mise sur le métier.
+     Le planning ne se construit pas par phases (conception,
+     développement, test de qualification, déploiement) mais par
+     ensembles successifs de fonctionnalités (ou « capabilités »)
+     
+   -Les logiciels open source
+   Des outils pour automatiser les tests du logiciel sont nécessaires.
+   Ils existent en version open source, comme Selenium, ce qui
+   permet de diminuer très fortement les dépenses de licence.
+   
+5.2.1 Les trois étapes de la construction
+   des tests
+ La construction des tests repose sur trois activités successives qui
+correspondent à trois niveaux d’abstraction.
+• Tout d’abord, le comportement attendu du logiciel est décrit
+avec le métier en langage pseudo-naturel de façon à identifier
+simplement la situation initiale, le déroulement du scénario de
+test et les résultats attendus. Il s’agit d’une spécification
+externe du comportement du logiciel, en général associé à
+une fonctionnalité. Plusieurs scénarios couvrent la même
+fonctionnalité (story). Un vocabulaire commun à l’ensemble
+du projet est visé dans un effort de conception global.
+• Cette description donne ensuite lieu à une retranscription
+formelle dans un langage exécutable (un script) qui est
+l’occasion de définir un ensemble de fonctions/classes
+réutilisées entre scénarios (se loguer, créer un client, créditer
+un compte…).
+• Ces fonctions sont enfin implémentées pour pouvoir interagir
+avec l’application. Cette interaction s’opère soit au niveau des
+API, soit sur les interfaces utilisateurs graphiques (GUI) à
+l’aide d’outils jouant le rôle de « pilotes techniques » (drivers).
+L’interfaçage au niveau des API teste davantage le
+fonctionnement interne du logiciel et présente l’avantage de
+ne pas devoir être remis à jour lorsque l’interface utilisateur
+évolue.
+
+5.2.2 Behavior Driven Development et mise
+en œuvre des tests dans DevOPs
+Le Behavior Driven Development joue dans les démarches agiles
+un rôle structurant.
+La description de premier niveau (spécification externe) est
+produite lors de l’identification de la fonctionnalité à réaliser (story)
+et avant le codage. Elle constitue la condition d’acceptation du
+développement. Cette spécification est aussi bien celle du
+développement à faire que celle du test qui la vérifiera.
+Les tests sont inclus dans la chaîne de fabrication (pipeline) et
+vérifiés dans l’environnement d’intégration. Ils seront exécutés
+systématiquement pour toutes les refabrications du logiciel.
+
+5.2.3 Durée de test et fonctionnement
+en pipeline
