@@ -1,0 +1,12 @@
+chapitre : Le déploiement continu
+Objectif
+La clé de voûte de DevOps est assurément le déploiement continu et ce chapitre est central dans la
+description des procédés de l’informatique d’entreprise lorsqu’elle met en œuvre les principes du Lean
+Manufacturing.
+Ce chapitre s’ouvre sur l’explication de la multiplication des déploiements par le modèle du pièce à
+pièce. Il se poursuit par la présentation de plusieurs caractéristiques de l’activité de déploiement des
+logiciels ainsi que de plusieurs procédés disponibles pour rendre les déploiements automatisés aussi
+fluides que souhaité.
+Il se prolonge par la présentation du déploiement sans arrêt de service, qui constitue un jalon majeur
+dans la mise en œuvre de DevOps, et se conclut par l’importance d’une relation étroite avec le métier
+pour qualifier définitivement l’atteinte des résultats qu’il attendait.
