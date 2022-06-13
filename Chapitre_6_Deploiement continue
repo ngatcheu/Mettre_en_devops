@@ -1,4 +1,4 @@
-chapitre : Le déploiement continu
+chapitre 6: Le déploiement continu
 Objectif
 La clé de voûte de DevOps est assurément le déploiement continu et ce chapitre est central dans la
 description des procédés de l’informatique d’entreprise lorsqu’elle met en œuvre les principes du Lean
@@ -10,3 +10,86 @@ fluides que souhaité.
 Il se prolonge par la présentation du déploiement sans arrêt de service, qui constitue un jalon majeur
 dans la mise en œuvre de DevOps, et se conclut par l’importance d’une relation étroite avec le métier
 pour qualifier définitivement l’atteinte des résultats qu’il attendait.
+
+6.1 POURQUOI MULTIPLIER LES DÉPLOIEMENTS ?
+6.1.1 Pièce à pièce et déploiements continus
+Le déploiement continu, au cœur des procédés DevOps, contribue
+significativement à l’objectif Lean de faire fonctionner le processus
+informatique sur la base d’incréments plus rapides, plus petits,
+plus fréquents. Ce fonctionnement en pièce à pièce vise
+l’amélioration de la productivité et la diminution des risques
+associés à l’extension des capacités à faire des affaires.
+
+Seuls les logiciels déployés créent
+de la valeur
+DevOps rappelle qu’aucune valeur n’est créée pour l’entreprise
+tant que les nouveaux logiciels ne sont pas utilisés.
+Le mode de fonctionnement DevOps conduit donc à rechercher
+la mise en production immédiate de chaque nouvelle capacité à
+faire des affaires, aussi petite soit elle, dont l’activation a un sens
+pour le métier.
+Les mises à la disposition d’un métier de nouvelles capacités à
+faire des affaires doivent d’autant moins altérer la sûreté de
+fonctionnement de l’informatique en cours d’utilisation que ces
+mises à disposition sont fréquentes.
+
+Plus fréquents, plus petits, moins risqués
+
+6.1.2 Une multiplication des déploiements
+sur deux axes
+Là où classiquement un seul grand déploiement avait lieu,
+DevOps le décompose donc selon deux axes : il préconise de
+faire des mises à dispositions successives de plusieurs capacités
+élémentaires à faire des affaires et de procéder en plusieurs
+déploiements pour chacune d’elles. Les déploiements sont ainsi
+considérablement plus nombreux.
+Chacun de ces déploiements est réversible, transparent pour
+les utilisateurs et conduit en journée, sans arrêt de service : les
+déploiements sont continus.
+
+6.2 EN QUOI CONSISTE UN DÉPLOIEMENT ?
+La multiplication des déploiements fait de leur automatisation une
+nécessité : ils doivent être techniquement rapides, sûrs et leur
+coût indépendant de leur nombre.
+
+6.2.1 Le besoin d’automatisation
+des déploiements
+L’automatisation des déploiements suppose leur industrialisation
+préalable, c’est-à-dire la définition de procédés reproductibles,
+indépendants des différentes versions successives de l’application
+à déployer et des environnements cibles de l’installation.
+
+6.2.2 Les ressources impliquées dans
+le fonctionnement d’une application
+Pour fonctionner, c’est-à-dire envoyer une réponse à une requête
+d’un utilisateur, une application sollicite différentes ressources
+d’infrastructure en charge du routage de la requête et de son
+filtrage sécuritaire, ainsi que des ressources applicatives :
+• données statiques telles que des images sur le serveur http ;
+• application proprement dite sur le serveur d’application ;
+• base de données sur le serveur correspondant.
+La destination de la requête est d’abord résolue par un serveur
+de nom. Elle est alors envoyée vers sa destination, filtrée par un
+premier pare-feu, puis arrive sur le serveur HTTP et sur un
+système chargé de la répartition de charge qui choisit
+définitivement le serveur d’application à utiliser par la requête pour
+exécuter l’application proprement dite.
+
+6.2.3 La gestion des paramètres
+d’environnement de l’application
+6.2.4 L’orchestration des tâches d’installation
+Restons sur le cas simple d’une nouvelle version d’une application
+déjà en place dans l’environnement à mettre à jour.
+La mise en place d’une nouvelle version
+La mise en place de cette nouvelle version consiste à déployer
+deux composantes technologiques distinctes : la nouvelle
+application proprement dite et la nouvelle version de la base.
+Cette installation comprend plusieurs étapes car la base de
+données doit être arrêtée en dernier et redémarrer en premier.
+D’autres actions comme l’arrêt de la surveillance doivent être
+exécutées. Lorsque l’installation se fait sur une seule partie d’un
+cluster, des commandes doivent être exécutées pour router les
+activités des utilisateurs vers les serveurs qui restent actifs.
+
+page 112
+
